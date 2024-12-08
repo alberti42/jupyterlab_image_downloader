@@ -39,7 +39,7 @@ A userscript to add a **download button** to images and SVGs rendered in Jupyter
 
 The button appears in the top-right corner of any supported element:
 
-```
+```html
 <div class="jp-RenderedImage" data-mime-type="image/png">
     <img src="data:image/png;base64,...">
     <button class="download-image-button"><i class="fas fa-download"></i></button>
