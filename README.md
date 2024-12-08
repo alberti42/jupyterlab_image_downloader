@@ -11,7 +11,37 @@ A userscript to add a **download button** to images and SVGs rendered in Jupyter
 - Downloads files in their original format with the correct extension (e.g., `.svg`, `.png`).
 - Works with both `http` and `https` JupyterLab domains.
 
-## Screenshot
+## Example
+
+You can use the code below to test the button.
+
+```python
+# The line below is a magic command configuring matplotlib to diplay graphics in SVG format. SVG format is supported natively by JuptyerLab and appears embedded as HTML5.
+%config InlineBackend.figure_formats = ['svg']
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Generate data for the plot
+x = np.linspace(0, 2 * np.pi, 100)  # 100 points between 0 and 2π
+y = np.sin(x)  # Sine function
+
+# Create the plot
+plt.figure(figsize=(8, 5))
+plt.plot(x*180/np.pi, y, label='sin(x)', color='blue', linewidth=2)
+plt.title('Plot of sin(x)', fontsize=14)
+plt.xlabel('x (degrees)', fontsize=12)
+plt.ylabel('y', fontsize=12)
+plt.axhline(0, color='gray', linewidth=0.5, linestyle='--')
+plt.legend(fontsize=12)
+plt.grid(alpha=0.2)
+
+# Show the plot
+plt.tight_layout()
+plt.show()
+```
+
+The screenshot below shows how the download button should look like if worked correctly.
 
 ![Download Button in Action](./docs/screenshot.png)
 
@@ -22,7 +52,7 @@ A userscript to add a **download button** to images and SVGs rendered in Jupyter
    - Alternatively, use [Tampermonkey](https://www.tampermonkey.net/) or [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) and any other compatible Userscript manager.
 
 2. **Install the Script**:
-   - Copy the code from [JupyterLab Image Downloader](./your-script-url.js) and create a new userscript in your script manager.
+   - Copy the code from [JupyterLab Image Downloader](https://raw.githubusercontent.com/alberti42/jupyterlab_image_downloader/refs/heads/main/jupyterlab_image_downloader.js) and create a new userscript in your script manager.
    - Alternatively, click the raw link in your repository to install directly (if hosted).
 
 3. **Reload JupyterLab**:
@@ -69,4 +99,4 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 - **GitHub Profile:** [alberti42](https://github.com/alberti42)
 - **Donations:** [![Buy Me a Coffee](https://img.shields.io/badge/Donate-Buy%20Me%20a%20Coffee-orange)](https://buymeacoffee.com/alberti)
 
-Feel free to contribute to the development of this plugin or report any issues in the [GitHub repository](https://github.com/alberti42/sublime-virtualenv/issues).
+Feel free to contribute to the development of this plugin or report any issues in the [GitHub repository](https://github.com/alberti42/jupyterlab_image_downloader/issues).
