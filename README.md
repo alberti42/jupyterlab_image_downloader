@@ -39,22 +39,22 @@ A userscript to add a **download button** to images and SVGs rendered in Jupyter
 
 The button appears in the top-right corner of any supported element:
 
-'''
+```
 <div class="jp-RenderedImage" data-mime-type="image/png">
     <img src="data:image/png;base64,...">
     <button class="download-image-button"><i class="fas fa-download"></i></button>
 </div>
-'''
+```
 
 ## Development
 
 To modify or extend the script:
 
 1. Clone the repository:
-   '''
+   ```bash
    git clone https://github.com/your-username/jupyterlab-image-downloader.git
    cd jupyterlab-image-downloader
-   '''
+   ```
 
 2. Edit the userscript (`jupyterlab-image-downloader.js`) as needed.
 
@@ -63,3 +63,10 @@ To modify or extend the script:
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+
+## Author
+- **Author:** Andrea Alberti
+- **GitHub Profile:** [alberti42](https://github.com/alberti42)
+- **Donations:** [![Buy Me a Coffee](https://img.shields.io/badge/Donate-Buy%20Me%20a%20Coffee-orange)](https://buymeacoffee.com/alberti)
+
+Feel free to contribute to the development of this plugin or report any issues in the [GitHub repository](https://github.com/alberti42/sublime-virtualenv/issues).
