@@ -1,4 +1,4 @@
-# JupyterLab Image Downloader for SVG and common image formats
+# JupyterLab Image Downloader for SVG and Common Image Formats
 
 A userscript to add a **download button** to images and SVGs rendered in JupyterLab notebooks. This script supports both `.svg` and common image formats like `.png` and `.jpeg`. The download buttons appear in the top-right corner of the rendered output, allowing you to save the plot with a single click.
 
@@ -16,7 +16,7 @@ A userscript to add a **download button** to images and SVGs rendered in Jupyter
 You can use the code below to test the button.
 
 ```python
-# The line below is a magic command configuring matplotlib to diplay graphics in SVG format. SVG format is supported natively by JuptyerLab and appears embedded as HTML5.
+# The line below is a magic command configuring matplotlib to display graphics in SVG format. SVG format is supported natively by JupyterLab and appears embedded as HTML5.
 %config InlineBackend.figure_formats = ['svg']
 
 import numpy as np
@@ -41,19 +41,19 @@ plt.tight_layout()
 plt.show()
 ```
 
-The screenshot below shows how the download button should look like if worked correctly.
+The screenshot below shows how the download button should look if the script is working correctly.
 
 ![Download Button in Action](./docs/screenshot.png)
 
 ## Installation
 
 1. **Install a Userscript Manager**:
-   - For Chome, Firefox, Edge, use the recommended [Violentmonkey](https://violentmonkey.github.io/).
-   - Alternatively, use [Tampermonkey](https://www.tampermonkey.net/) or [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) and any other compatible Userscript manager.
+   - For Chrome, Firefox, or Edge, use the recommended [Violentmonkey](https://violentmonkey.github.io/).
+   - Alternatively, use [Tampermonkey](https://www.tampermonkey.net/) or [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/).
 
 2. **Install the Script**:
    - Copy the code from [JupyterLab Image Downloader](https://raw.githubusercontent.com/alberti42/jupyterlab_image_downloader/refs/heads/main/jupyterlab_image_downloader.js) and create a new userscript in your script manager.
-   - Alternatively, click the raw link in your repository to install directly (if hosted).
+   - Alternatively, click the raw link in the repository to install directly via your userscript manager.
 
 3. **Reload JupyterLab**:
    - The script will automatically work on both `http` and `https` JupyterLab domains.
@@ -97,6 +97,6 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 ## Author
 - **Author:** Andrea Alberti
 - **GitHub Profile:** [alberti42](https://github.com/alberti42)
-- **Donations:** [![Buy Me a Coffee](https://img.shields.io/badge/Donate-Buy%20Me%20a%20Coffee-orange)](https://buymeacoffee.com/alberti)
+- **Donations:** If you found this script helpful, consider supporting its development via [Buy Me a Coffee](https://buymeacoffee.com/alberti).
 
 Feel free to contribute to the development of this plugin or report any issues in the [GitHub repository](https://github.com/alberti42/jupyterlab_image_downloader/issues).
