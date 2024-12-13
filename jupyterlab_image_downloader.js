@@ -56,13 +56,30 @@ function addDownloadButton(divElement) {
 
     // Attach an event listener to the button
     button.addEventListener('click', () => {
-        if (imgElement.src.startsWith(`data:${mimeType}`)) {
-            // Decode the base64 or URL-encoded content
-            const content = imgElement.src.split(',')[1];
-            const decodedContent = atob(content); // Decode base64 content
+        // Check if the data is base64-encoded
+        const isBase64 = imgElement.src.startsWith(`data:${mimeType};base64,`);
 
-            // Create a Blob for the content
-            const blob = new Blob([Uint8Array.from(decodedContent, char => char.charCodeAt(0))], { type: mimeType });
+        // Check if the data is percent-encoded
+        const isPercentEncoded = imgElement.src.startsWith(`data:${mimeType},`);
+
+        if (isPercentEncoded || isBase64) {
+
+            // Extract the content after the comma
+            const content = imgElement.src.split(',')[1];
+
+            // Decode the content based on the encoding type
+            const decodedContent = isBase64 ? atob(content) : decodeURIComponent(content);
+
+            // Log the decoded content (for debugging purposes)
+            console.log(decodedContent);
+
+            // Create a Blob for the decoded content
+            const blob = new Blob(
+                isBase64
+                    ? [Uint8Array.from(decodedContent, char => char.charCodeAt(0))]
+                    : [decodedContent],
+                { type: mimeType }
+            );
 
             // Create a temporary link element
             const link = document.createElement('a');
@@ -72,9 +89,10 @@ function addDownloadButton(divElement) {
             link.click(); // Trigger the download
             document.body.removeChild(link); // Clean up
         } else {
-            console.error(`Image source does not match expected MIME type: ${mimeType}`);
+            console.error(`Image source does not match expected MIME type or encoding: ${mimeType}`);
         }
     });
+
 
     // Append the button to the div
     divElement.appendChild(button);
