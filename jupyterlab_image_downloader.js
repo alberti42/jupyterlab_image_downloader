@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name        Download Images from JupyterLab
 // @namespace   https://github.com/alberti42/
-// @match       http://*/lab/tree/*
-// @match       https://*/lab/tree/*
+// @match       http://*/lab/*
+// @match       https://*/lab/*
 // @grant       none
 // @version     1.4
 // @author      Andrea Alberti
@@ -56,7 +56,7 @@ function addDownloadButton(divElement) {
 
     // Attach an event listener to the button
     button.addEventListener('click', () => {
-        if (imgElement.src.startsWith(`data:${mimeType};base64`)) {
+        if (imgElement.src.startsWith(`data:${mimeType}`)) {
             // Decode the base64 or URL-encoded content
             const content = imgElement.src.split(',')[1];
             const decodedContent = atob(content); // Decode base64 content
